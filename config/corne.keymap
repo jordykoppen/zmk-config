@@ -13,11 +13,11 @@
 #define RSE  2
 #define ADJ  3
 
-# MOD-TAP
-&mt {
-  tapping-term-ms = <200>;
-}
-
+#define NXT C_NEXT
+#define PRV C_PREV
+#define VUP C_VOL_UP
+#define VDN C_VOL_DN
+#define PLY C_PP
 
 / {
         keymap {
@@ -49,7 +49,6 @@
                                 &kp LGUI &trans &kp SPACE      &kp RET &mo ADJ &kp RALT
                         >;
                 };
-
                 raise_layer {
 // -----------------------------------------------------------------------------------------
 // |  `   |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | DEL |
@@ -71,7 +70,7 @@
 //                   | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
    &none      &none        &none        &none        &none        &none           &none &none   &none   &none   &none   &none 
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4    &none &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT &kp C_PP
+   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4    &none &kp PRV &kp VDN &kp VUP &kp NXT &kp PLY
    &none      &none      &none          &none        &none        &none           &none &none   &none   &none   &none   &none 
                                         &kp LGUI     &trans       &kp SPACE       &kp RET &trans &kp RALT
                         >;
