@@ -9,15 +9,17 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define DEFAULT 0
-#define LWR  1
-#define RSE  2
-#define ADJ  3
+#define LWR     1
+#define RSE     2
+#define ADJ     3
+#define ALTR    4
 
-#define NXT C_NEXT
-#define PRV C_PREV
-#define VUP C_VOL_UP
-#define VDN C_VOL_DN
-#define PLY C_PP
+#define NXT   C_NEXT
+#define PRV   C_PREV
+#define VUP   C_VOL_UP
+#define VDN   C_VOL_DN
+#define PLY   C_PP
+#define MENU  K_APP
 
 / {
         keymap {
@@ -66,12 +68,12 @@
 // -----------------------------------------------------------------------------------------
 // |     |     |     |     |     |     |   |     |     |     |     |     |     |
 // |CLEAR| BT1 | BT2 | BT3 | BT4 | BT5 |   |     | PRV | VDN | VUP | NXT | PLY |
-// |     |     |     |     |     |     |   |     |     |     |     |     |     |
+// |     |     |     |     |     |TALTR|   |     |     |     |     |     |     |
 //                   | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
    &none      &none        &none        &none        &none        &none           &none &none   &none   &none   &none   &none 
    &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4    &none &kp PRV &kp VDN &kp VUP &kp NXT &kp PLY
-   &none      &none      &none          &none        &none        &none           &none &none   &none   &none   &none   &none 
+   &none      &none      &none          &none        &none        &tog ALTR       &none &none   &none   &none   &none   &none 
                                         &kp LGUI     &trans       &kp SPACE       &kp RET &trans &kp RALT
                         >;
                 };
@@ -80,12 +82,12 @@
 // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
 // |CTLESC|  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
 // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | SHFT |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+//                    | APP | LWR | SPC |   | ENT | RSE  | ALT |
                         bindings = <
    &kp TAB       &kp Q &kp W &kp E &kp R &kp T    &kp Y &kp U &kp I     &kp O   &kp P    &kp BSPC
    &mt LCTRL ESC &kp A &kp S &kp D &kp F &kp G    &kp H &kp J &kp K     &kp L   &kp SEMI &kp SQT
    &kp LSHFT     &kp Z &kp X &kp C &kp V &kp B    &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp RSHFT
-                    &kp LGUI &mo LWR &kp SPACE    &kp RET &mo RSE &kp RALT
+                    &kp MENU &mo LWR &kp SPACE    &kp RET &mo RSE &kp RALT
                         >;
                 };
 
